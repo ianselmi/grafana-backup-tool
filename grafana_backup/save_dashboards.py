@@ -15,13 +15,13 @@ def main(args, settings):
     debug = settings.get('DEBUG')
     api_version = settings.get('API_VERSION')
     pretty_print = settings.get('PRETTY_PRINT')
-    gitVersion = args.get('--git', False)
+    flat = args.get('--flat', False)
     
-    if gitVersion:
+    if flat:
         folder_path = '{0}/dashboards/'.format(backup_dir)        
         log_file = 'dashboards.txt'
     else:
-        folder_path = '{0}/dashboards/'.format(backup_dir, timestamp)
+        folder_path = '{0}/dashboards_{1}/'.format(backup_dir, timestamp)
         log_file = 'dashboards_{0}.txt'.format(timestamp)
 
     if not os.path.exists(folder_path):

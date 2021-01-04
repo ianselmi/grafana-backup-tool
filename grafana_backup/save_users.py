@@ -16,14 +16,14 @@ def main(args, settings):
     debug = settings.get('DEBUG')
     api_version = settings.get('API_VERSION')
     pretty_print = settings.get('PRETTY_PRINT')
-    gitVersion = args.get('--git', False)
+    flat = args.get('--flat', False)
 
     if http_get_headers_basic_auth:       
-        if gitVersion:
+        if flat:
             folder_path = '{0}/users/'.format(backup_dir)        
             log_file = 'users.txt'
         else:
-            folder_path = '{0}/users/'.format(backup_dir, timestamp)
+            folder_path = '{0}/users_{1}/'.format(backup_dir, timestamp)
             log_file = 'users_{0}.txt'.format(timestamp)    
 
         if not os.path.exists(folder_path):
