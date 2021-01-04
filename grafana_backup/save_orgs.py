@@ -21,7 +21,7 @@ def main(args, settings):
         folder_path = '{0}/organizations/'.format(backup_dir)        
         log_file = 'organizations.txt'
     else:
-        folder_path = '{0}/organizations_{1}/'.format(backup_dir, timestamp)
+        folder_path = '{0}/organizations/{1}'.format(backup_dir, timestamp)
         log_file = 'organizations_{0}.txt'.format(timestamp)
     
     if http_get_headers_basic_auth:
