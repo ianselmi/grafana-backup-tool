@@ -8,7 +8,6 @@ from grafana_backup.s3_upload import main as s3_upload
 from grafana_backup.save_orgs import main as save_orgs
 from grafana_backup.save_users import main as save_users
 import sys
-from git import *
 
 
 def main(args, settings):
